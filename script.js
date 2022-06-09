@@ -1,7 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
 
-const playerSelection = 'rock';
 function computerPlay() {
     let choice = ['paper', 'rock', 'scissor']
     return  choice [Math.floor(Math.random()*3)]}
@@ -21,15 +20,39 @@ function playRound(playerSelection, computerChoice) {
 
  }
 function game() {
+    //loop the game for 5 times 
      for (let i = 0; i < 5; i++) {
-       let result = playRound(playerSelection, computerPlay())
+         //catch error and respond for user to write correctly
+       let playerSelection = prompt('please write down "paper"or "rock"or "scissor"', '') ; 
+       if ( playerSelection === '' || playerSelection === null) {
+           alert("please write down one of choices to continue playing");
+            
+       } 
+      //for ending game in middle of play and stoping prompt
+       else if (playerSelection === 'end'){return "you end the game. for start use 'game()' function ";}
+       //making user input case insensetive ,couldn't put on prompt didn't catch null error 
+       let userInput = playerSelection.toLowerCase();
+       //calling playRound function and puting the value returnd in variable named result
+       let result = playRound(userInput, computerPlay())
+       //show the result on console
         console.log(result)
+       // condition to add score for each of player and computer
          if (result == 'You lose! paper beats rock'){ computerScore++}
          else if (result == 'You win! rock beats scissor'){ playerScore++}
-
-     }
-     if (playerScore > computerScore){ console.log("You won the game")}
-     else console.log("you lost the game")
-     console.log(computerScore)
-     console.log(playerScore)
+    }//END of loop
+    // reveal final score
+    console.log(`computer Score is : ${computerScore}`)
+    console.log(`player Score is : ${playerScore}`)
+    //condition for wining 
+     if (playerScore > computerScore){ 
+         console.log("YOU WON THE GAME!!!")
+        } else if (playerScore < computerScore) {
+             console.log("YOU LOST THE GAME !")
+            } else {
+                console.log("THE GAME END UP IN TIE !")
+            }    
+            
+     //clear the scores
+     playerScore = 0;
+     computerScore = 0;
  }
