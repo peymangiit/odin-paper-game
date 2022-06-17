@@ -5,14 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>paper rock scissor</title>
-  
+   <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    <h1>the Paper Rock Scissor game is played on console </h1>
+    <!-- <h1>the Paper Rock Scissor game is played on console </h1>
     <h2>use "control-shift-i" or "click-right > inspect"</h2>
     <h3>to statrt the game write "game()" </h3>
     <h4>to end the game before finishing write "end" in prompt window</h4>
-    <p>the game will ask you five time to write your choice and show the final result</p>
+    <p>the game will ask you five time to write your choice and show the final result</p> -->
+    <div class="fullContainer">
+        <h1>Rock Paper Scissor</h1>
+        
+        <div class="namePiece">
+            <h4>player</h4>
+            <h4>computer</h4>
+        </div>
+        <div class="score">
+            <p id="playerscore">5</p>
+            <p id="computerscore">5</p>
+        </div>
+
+        <div class="textBox"> </div>
+        <div class="finalText"></div>
+
+        <div class="container">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissor">Scissor</button>
+        </div>
+    </div>
+       
+
     <script src="./script.js"></script>
 </body>
 </html>
